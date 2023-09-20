@@ -1,7 +1,29 @@
-import ReactDOM from 'react-dom';
+import { useState } from 'react';
+import ReactDOM from 'react-dom/client';
 
 const App = () => {
-  return <h1>IDX</h1>;
+  const [input, setInput] = useState('');
+  const [code, setCode] = useState('');
+
+  const onClick = () => {
+    console.log(input);
+  };
+
+  return (
+    <div>
+      <textarea
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      ></textarea>
+      <div>
+        <button onClick={onClick}>Process</button>
+      </div>
+      <pre>{code}</pre>
+    </div>
+  );
 };
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+const container = document.querySelector('#root') as HTMLElement;
+const root = ReactDOM.createRoot(container);
+
+root.render(<App />);
