@@ -12,12 +12,18 @@ export const unpkgPathPlugin = () => {
         console.log('onResolve', args);
         if (args.path === 'index.js') {
           return { path: args.path, namespace: 'a' };
-        } else if (args.path === 'tiny-test-pkg') {
-          return {
-            path: 'https://unpkg.com/tiny-test-pkg@1.0.0/index.js',
-            namespace: 'a',
-          };
         }
+
+        return {
+          namespace: 'a',
+          path: `https://unpkg.com/${args.path}`,
+        };
+        // else if (args.path === 'tiny-test-pkg') {
+        //   return {
+        //     path: 'https://unpkg.com/tiny-test-pkg@1.0.0/index.js',
+        //     namespace: 'a',
+        //   };
+        // }
       });
 
       // @ Load index.js and the dependent modules
