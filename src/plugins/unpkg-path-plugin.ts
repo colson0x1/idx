@@ -1,5 +1,19 @@
 import * as esbuild from 'esbuild-wasm';
 import axios from 'axios';
+import localForage from 'localforage';
+
+const fileCache = localForage.createInstance({
+  name: 'filecache',
+});
+
+// Testing indexedDB
+// (async () => {
+//   await fileCache.setItem('name', 'Colson');
+
+//   const name = await fileCache.getItem('name');
+
+//   console.log(name);
+// })();
 
 export const unpkgPathPlugin = () => {
   return {
@@ -40,19 +54,34 @@ export const unpkgPathPlugin = () => {
           return {
             loader: 'jsx',
             contents: `
-              import React, { useState } from 'react';
+              import React, { useState } from 'react-select';
               console.log(React, useState);
             `,
           };
         }
 
+        // Check if the file is already fetched and if it's in the cache
+        const cachedResult = await fileCache.getItem(args.path);
+
+        // If it's in the cache, return it immediately
+        if (cachedResult) {
+          return cachedResult;
+        }
+
+        // Else allow the request to happen
         const { data, request } = await axios.get(args.path);
         // console.log(request);
-        return {
+
+        const result = {
           loader: 'jsx',
           contents: data,
           resolveDir: new URL('./', request.responseURL).pathname,
         };
+
+        // After receiving response back, Store response in cache
+        await fileCache.setItem(args.path, result);
+
+        return result;
       });
     },
   };
