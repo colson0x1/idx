@@ -29,10 +29,7 @@ export const fetchPlugin = (inputCode: string) => {
         };
       });
 
-      // Load file ending in .css
-      build.onLoad({ filter: /.css$/ }, async (args: any) => {
-        // console.log('onLoad', args);
-
+      build.onLoad({ filter: /.*/ }, async (args: any) => {
         // Check if the file is already fetched and if it's in the cache
         const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(
           args.path
@@ -42,8 +39,13 @@ export const fetchPlugin = (inputCode: string) => {
         if (cachedResult) {
           return cachedResult;
         }
+      });
 
-        // Else allow the request to happen
+      // Load file ending in .css
+      build.onLoad({ filter: /.css$/ }, async (args: any) => {
+        // console.log('onLoad', args);
+
+        // If not cached, allow the request to happen
         const { data, request } = await axios.get(args.path);
         // console.log(request);
 
@@ -73,17 +75,7 @@ export const fetchPlugin = (inputCode: string) => {
       build.onLoad({ filter: /.*/ }, async (args: any) => {
         // console.log('onLoad', args);
 
-        // Check if the file is already fetched and if it's in the cache
-        const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(
-          args.path
-        );
-
-        // If it's in the cache, return it immediately
-        if (cachedResult) {
-          return cachedResult;
-        }
-
-        // Else allow the request to happen
+        // If not cached, allow the request to happen
         const { data, request } = await axios.get(args.path);
         // console.log(request);
 
