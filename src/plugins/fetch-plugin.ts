@@ -22,48 +22,74 @@ export const fetchPlugin = (inputCode: string) => {
       // @ Load index.js and the dependent modules
       // Overwrite ESBuild's natural way of loading up a file which is
       // to just read it directly of a file system
-      build.onLoad({ filter: /.*/ }, async (args: any) => {
+      build.onLoad({ filter: /(^index\.js$)/ }, () => {
+        return {
+          loader: 'jsx',
+          contents: inputCode,
+        };
+      });
+
+      // Load file ending in .css
+      build.onLoad({ filter: /.css$/ }, async (args: any) => {
         // console.log('onLoad', args);
 
-        if (args.path === 'index.js') {
-          return {
-            loader: 'jsx',
-            contents: inputCode,
-          };
-        }
-
         // Check if the file is already fetched and if it's in the cache
-        // const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(
-        //   args.path
-        // );
+        const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(
+          args.path
+        );
 
         // If it's in the cache, return it immediately
-        // if (cachedResult) {
-        //   return cachedResult;
-        // }
+        if (cachedResult) {
+          return cachedResult;
+        }
 
         // Else allow the request to happen
         const { data, request } = await axios.get(args.path);
         // console.log(request);
 
-        const fileType = args.path.match(/.css$/) ? 'css' : 'jsx';
-
         const escaped = data
           .replace(/\n/g, '')
           .replace(/"/g, '\\"')
           .replace(/'/g, "\\'");
-        const contents =
-          fileType === 'css'
-            ? `
-            const style = document.createElement('style');
-            style.innerText = '${escaped}';
-            document.head.appendChild(style);
-          `
-            : data;
+        const contents = `
+          const style = document.createElement('style');
+          style.innerText = '${escaped}';
+          document.head.appendChild(style);
+        `;
 
         const result: esbuild.OnLoadResult = {
           loader: 'jsx',
           contents,
+          resolveDir: new URL('./', request.responseURL).pathname,
+        };
+
+        // After receiving response back, Store response in cache
+        await fileCache.setItem(args.path, result);
+
+        return result;
+      });
+
+      // For plain JS files that supports JSX too
+      build.onLoad({ filter: /.*/ }, async (args: any) => {
+        // console.log('onLoad', args);
+
+        // Check if the file is already fetched and if it's in the cache
+        const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(
+          args.path
+        );
+
+        // If it's in the cache, return it immediately
+        if (cachedResult) {
+          return cachedResult;
+        }
+
+        // Else allow the request to happen
+        const { data, request } = await axios.get(args.path);
+        // console.log(request);
+
+        const result: esbuild.OnLoadResult = {
+          loader: 'jsx',
+          contents: data,
           resolveDir: new URL('./', request.responseURL).pathname,
         };
 
