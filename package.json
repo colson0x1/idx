@@ -11,7 +11,6 @@
   "bugs": {
     "url": "https://github.com/colson0x1/idx/issues"
   },
-  "homepage": "https://github.com/colson0x1/idx#readme",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
