@@ -21,7 +21,7 @@ const App = () => {
     startService();
   }, []);
 
-  const onClick = async () => {
+  const onClick = async (input: string) => {
     if (!ref.current) {
       return;
     }
@@ -83,11 +83,12 @@ const App = () => {
     <div>
       <textarea
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => {
+          onClick(e.target.value);
+          setInput(e.target.value);
+        }}
       ></textarea>
-      <div>
-        <button onClick={onClick}>Process</button>
-      </div>
+      <div>{/* <button onClick={onClick}>Process</button> */}</div>
       <iframe
         title="preview"
         ref={iframe}
