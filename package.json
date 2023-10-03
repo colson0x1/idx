@@ -12,6 +12,7 @@
     "url": "https://github.com/colson0x1/idx/issues"
   },
   "dependencies": {
+    "@monaco-editor/react": "3.7.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

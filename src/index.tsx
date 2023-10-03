@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 import { fetchPlugin } from './plugins/fetch-plugin';
+import CodeEditor from './components/code-editor';
 
 const App = () => {
   const ref = useRef<any>();
@@ -21,7 +22,7 @@ const App = () => {
     startService();
   }, []);
 
-  const onClick = async (input: string) => {
+  const onClick = async () => {
     if (!ref.current) {
       return;
     }
@@ -81,14 +82,16 @@ const App = () => {
 
   return (
     <div>
+      <CodeEditor />
       <textarea
         value={input}
         onChange={(e) => {
-          onClick(e.target.value);
           setInput(e.target.value);
         }}
       ></textarea>
-      <div>{/* <button onClick={onClick}>Process</button> */}</div>
+      <div>
+        <button onClick={onClick}>Process</button>
+      </div>
       <iframe
         title="preview"
         ref={iframe}
