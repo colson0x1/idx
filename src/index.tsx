@@ -27,6 +27,8 @@ const App = () => {
       return;
     }
 
+    iframe.current.srcdoc = html;
+
     // Transpiling
     /* const result = await ref.current.transform(input, {
       loader: 'jsx',
