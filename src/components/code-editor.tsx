@@ -22,10 +22,10 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
 
   const onFormatClick = () => {
     console.log(editorRef.current);
-    // TODO: Get current value from the editor
+    // Get current value from the editor
     const unformatted = editorRef.current.getModel().getValue();
 
-    // TODO: Format that value
+    // Format that value
     const formatted = prettier.format(unformatted, {
       parser: 'babel',
       plugins: [parser],
@@ -34,17 +34,17 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
       singleQuote: true,
     });
 
-    // TODO: Set the formatted value back in the editor
+    // Set the formatted value back in the editor
     editorRef.current.setValue(formatted);
   };
 
   return (
     <div>
-      <button onClick={onFormatClick}>Format</button>
+      <button className="button button-format is-primary is-small" onClick={onFormatClick}>Format</button>
       <MonacoEditor
         editorDidMount={onEditorDidMount}
         value={initialValue}
-        theme="dark"
+        theme="white"
         language="javascript"
         height="500px"
         options={{
