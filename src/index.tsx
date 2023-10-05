@@ -5,10 +5,11 @@ import ReactDOM from 'react-dom/client';
 import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 import { fetchPlugin } from './plugins/fetch-plugin';
 import CodeEditor from './components/code-editor';
+import Preview from './components/preview';
 
 const App = () => {
   const ref = useRef<any>();
-  const iframe = useRef<any>();
+  const [code, setCode] = useState('');
   const [input, setInput] = useState('');
 
   const startService = async () => {
@@ -27,8 +28,6 @@ const App = () => {
     if (!ref.current) {
       return;
     }
-
-    iframe.current.srcdoc = html;
 
     // Transpiling
     /* const result = await ref.current.transform(input, {
@@ -50,8 +49,7 @@ const App = () => {
 
     // console.log(result);
 
-    // setCode(result.outputFiles[0].text);
-    iframe.current.contentWindow.postMessage(result.outputFiles[0].text, '*');
+    setCode(result.outputFiles[0].text);
 
     // try {
     //   eval(result.outputFiles[0].text);
@@ -60,48 +58,16 @@ const App = () => {
     // }
   };
 
-  const html = `
-    <html>
-      <head></head>
-      <body>
-        <div id="root"><div>
-        <script>
-          window.addEventListener('message', (event) => {
-            <!-- console.log(event.data) -->
-            try {
-              eval(event.data);
-            } catch (err) {
-              const root = document.querySelector('#root');
-              root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>' + err + '</div>';
-              console.error(err);
-            }
-          }, false);
-        </script>
-      </body>
-    </html>
-  `;
-
   return (
     <div>
       <CodeEditor
         initialValue="console.log('Yo!');"
         onChange={(value) => setInput(value)}
       />
-      <textarea
-        value={input}
-        onChange={(e) => {
-          setInput(e.target.value);
-        }}
-      ></textarea>
       <div>
         <button onClick={onClick}>Process</button>
       </div>
-      <iframe
-        title="preview"
-        ref={iframe}
-        sandbox="allow-scripts"
-        srcDoc={html}
-      />
+      <Preview code={code} />
     </div>
   );
 };
