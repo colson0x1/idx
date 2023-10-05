@@ -1,7 +1,6 @@
 import 'bulmaswatch/superhero/bulmaswatch.min.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-
 import CodeEditor from './components/code-editor';
 import Preview from './components/preview';
 import bundle from './bundler';
@@ -18,7 +17,7 @@ const App = () => {
   return (
     <div>
       <CodeEditor
-        initialValue="console.log('Yo!');"
+        initialValue="{/* JS/JSX */}"
         onChange={(value) => setInput(value)}
       />
       <div>
