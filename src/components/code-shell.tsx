@@ -2,6 +2,7 @@ import { useState } from 'react';
 import CodeEditor from './code-editor';
 import Preview from './preview';
 import bundle from '../bundler';
+import Resizable from './resizable';
 
 const CodeShell = () => {
   const [code, setCode] = useState('');
@@ -13,16 +14,18 @@ const CodeShell = () => {
   };
 
   return (
-    <div>
-      <CodeEditor
-        initialValue="{/* JS/JSX */}"
-        onChange={(value) => setInput(value)}
-      />
+    <Resizable direction="vertical">
       <div>
-        <button onClick={onClick}>Process</button>
+        <CodeEditor
+          initialValue="{/* JS/JSX */}"
+          onChange={(value) => setInput(value)}
+        />
+        <div>
+          <button onClick={onClick}>Process</button>
+        </div>
+        <Preview code={code} />
       </div>
-      <Preview code={code} />
-    </div>
+    </Resizable>
   );
 };
 
