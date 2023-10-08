@@ -1,6 +1,7 @@
 .editor-wrapper {
   position: relative;
   height: 100%;
+  width: 100%;
 }
 
 .editor-wrapper .button-format {
@@ -13,5 +14,5 @@
 }
 
 .editor-wrapper:hover .button-format {
-  opacity: 1.0;
+  opacity: 1;
 }
