@@ -15,14 +15,11 @@ const CodeShell = () => {
 
   return (
     <Resizable direction="vertical">
-      <div>
+      <div style={{ height: '100%', display: 'flex', flexDirection: 'row' }}>
         <CodeEditor
           initialValue="{/* JS/JSX */}"
           onChange={(value) => setInput(value)}
         />
-        <div>
-          <button onClick={onClick}>Process</button>
-        </div>
         <Preview code={code} />
       </div>
     </Resizable>

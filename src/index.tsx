@@ -6,8 +6,6 @@ const App = () => {
   return (
     <div>
       <CodeShell />
-      <CodeShell />
-      <CodeShell />
     </div>
   );
 };
