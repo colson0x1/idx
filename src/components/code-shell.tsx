@@ -30,7 +30,7 @@ const CodeShell = () => {
             onChange={(value) => setInput(value)}
           />
         </Resizable>
-        <Preview code={code} />
+        <Preview code={code} bundlingStatus={err} />
       </div>
     </Resizable>
   );
