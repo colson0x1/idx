@@ -20,8 +20,12 @@ const html = `
             console.error(err);
           }
 
+          window.addEventListener('error', (event) => {
+            event.preventDefault();
+            handleError(event.error);
+          })
+
           window.addEventListener('message', (event) => {
-            <!-- console.log(event.data) -->
             try {
               eval(event.data);
             } catch (err) {
