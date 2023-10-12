@@ -6,6 +6,7 @@ interface PreviewProps {
 }
 
 const html = `
+    <!DOCTYPE html>
     <html>
       <head>
         <style>html { background-color: white; }</style>
@@ -13,14 +14,18 @@ const html = `
       <body>
         <div id="root"><div>
         <script>
+          const handleError = (err) => {
+            const root = document.querySelector('#root');
+            root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>' + err + '</div>';
+            console.error(err);
+          }
+
           window.addEventListener('message', (event) => {
             <!-- console.log(event.data) -->
             try {
               eval(event.data);
             } catch (err) {
-              const root = document.querySelector('#root');
-              root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>' + err + '</div>';
-              console.error(err);
+              handleError(err);
             }
           }, false);
         </script>
