@@ -1,11 +1,11 @@
 import 'bulmaswatch/superhero/bulmaswatch.min.css';
 import ReactDOM from 'react-dom/client';
-import CodeShell from './components/code-shell';
+import TextEditor from './components/text-editor';
 
 const App = () => {
   return (
     <div>
-      <CodeShell />
+      <TextEditor />
     </div>
   );
 };

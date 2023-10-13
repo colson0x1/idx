@@ -23,6 +23,7 @@
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "@types/react-resizable": "3.0.2",
+    "@uiw/react-md-editor": "2.1.1",
     "axios": "^1.5.0",
     "bulmaswatch": "^0.8.1",
     "esbuild-wasm": "0.8.27",
