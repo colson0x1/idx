@@ -1,6 +1,6 @@
-import 'bulmaswatch/superhero/bulmaswatch.min.css';
-import ReactDOM from 'react-dom/client';
-import TextEditor from './components/text-editor';
+import "bulmaswatch/superhero/bulmaswatch.min.css";
+import ReactDOM from "react-dom/client";
+import TextEditor from "./components/text-editor";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
   );
 };
 
-const container = document.querySelector('#root') as HTMLElement;
+const container = document.querySelector("#root") as HTMLElement;
 const root = ReactDOM.createRoot(container);
 
 root.render(<App />);
