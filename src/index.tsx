@@ -1,16 +1,20 @@
-import 'bulmaswatch/superhero/bulmaswatch.min.css'
-import ReactDOM from 'react-dom/client'
-import TextEditor from './components/text-editor'
+import 'bulmaswatch/superhero/bulmaswatch.min.css';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store } from './state';
+import TextEditor from './components/text-editor';
 
 const App = () => {
   return (
-    <div>
-      <TextEditor />
-    </div>
-  )
-}
+    <Provider store={store}>
+      <div>
+        <TextEditor />
+      </div>
+    </Provider>
+  );
+};
 
-const container = document.querySelector('#root') as HTMLElement
-const root = ReactDOM.createRoot(container)
+const container = document.querySelector('#root') as HTMLElement;
+const root = ReactDOM.createRoot(container);
 
-root.render(<App />)
+root.render(<App />);
