@@ -2,11 +2,12 @@ import './add-cell.css';
 import { useActions } from '../hooks/use-actions';
 
 interface AddCellProps {
-  nextCellId: string;
+  nextCellId: string | null;
 }
 
-const AddCell: React.FC<AddCellProps> = () => {
+const AddCell: React.FC<AddCellProps> = ({ nextCellId }) => {
   const { insertCellBefore } = useActions();
+
   return (
     <div>
       <button onClick={() => insertCellBefore(nextCellId, 'code')}>Code</button>
