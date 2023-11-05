@@ -15,6 +15,8 @@ const CellList: React.FC = () => {
     </Fragment>
   ));
 
+  renderedCells.push();
+
   return (
     <div>
       {renderedCells}
