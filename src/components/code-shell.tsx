@@ -23,7 +23,7 @@ const CodeShell: React.FC<CodeCellProps> = ({ cell }) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [cell.content, cell.id]);
+  }, [cell.content, cell.id, createBundle]);
 
   return (
     <Resizable direction='vertical'>
