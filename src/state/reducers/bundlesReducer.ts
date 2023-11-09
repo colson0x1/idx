@@ -19,7 +19,7 @@ const reducer = produce(
         state[action.payload.cellId] = {
           loading: true,
           code: '',
-          error: '',
+          err: '',
         };
         return state;
       case ActionType.BUNDLE_COMPLETE:
