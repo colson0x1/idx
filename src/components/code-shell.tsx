@@ -16,6 +16,11 @@ const CodeShell: React.FC<CodeCellProps> = ({ cell }) => {
   // console.log(bundle);
 
   useEffect(() => {
+    if (!bundle) {
+      createBundle(cell.id, cell.content);
+      return;
+    }
+
     const timer = setTimeout(async () => {
       createBundle(cell.id, cell.content);
     }, 750);
@@ -23,6 +28,9 @@ const CodeShell: React.FC<CodeCellProps> = ({ cell }) => {
     return () => {
       clearTimeout(timer);
     };
+    // @ Disable ESLint - Turn off dependency check
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cell.content, cell.id, createBundle]);
 
   return (
