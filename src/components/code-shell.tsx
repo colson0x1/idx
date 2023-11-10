@@ -19,7 +19,13 @@ const CodeShell: React.FC<CodeCellProps> = ({ cell }) => {
     const { data, order } = state.cell;
     const orderedCells = order.map((id) => data[id]);
 
-    const cumulativeCode = [];
+    const cumulativeCode = [
+      `
+        const show = (value) => {
+          document.querySelector('#root').innerHTML = value;
+        }
+      `,
+    ];
     for (let c of orderedCells) {
       // Pick up all the code from the previous cells
       if (c.type === 'code') {
