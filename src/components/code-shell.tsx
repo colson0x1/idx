@@ -33,16 +33,16 @@ const CodeShell: React.FC<CodeCellProps> = ({ cell }) => {
     return cumulativeCode;
   });
 
-  console.log(cumulativeCode);
+  // console.log(cumulativeCode);
 
   useEffect(() => {
     if (!bundle) {
-      createBundle(cell.id, cell.content);
+      createBundle(cell.id, cumulativeCode.join('\n'));
       return;
     }
 
     const timer = setTimeout(async () => {
-      createBundle(cell.id, cell.content);
+      createBundle(cell.id, cumulativeCode.join('\n'));
     }, 750);
 
     return () => {
@@ -51,7 +51,7 @@ const CodeShell: React.FC<CodeCellProps> = ({ cell }) => {
     // @ Disable ESLint - Turn off dependency check
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cell.content, cell.id, createBundle]);
+  }, [cumulativeCode.join('\n'), cell.id, createBundle]);
 
   return (
     <Resizable direction='vertical'>
