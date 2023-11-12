@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/colson0x1/idx#readme",
   "dependencies": {
-    "commander": "^11.1.0"
+    "commander": "^11.1.0",
+    "local-api": "^1.0.0"
   }
 }
