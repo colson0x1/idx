@@ -1,0 +1,22 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colson0x1/idx.git"
+  },
+  "author": "Colson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colson0x1/idx/issues"
+  },
+  "homepage": "https://github.com/colson0x1/idx#readme",
+  "dependencies": {
+    "commander": "^11.1.0"
+  }
+}
