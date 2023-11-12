@@ -1,0 +1,60 @@
+/* iDX Light Theme */
+
+/* Change background color for the entire app */
+html {
+  background-color: #f4f4f4; /* Light background */
+  color: #333333; /* Dark text color */
+}
+
+/* Change button color */
+.button.is-primary {
+  background-color: #4285f4; /* Google blue color */
+  color: #ffffff; /* Text color for the button */
+}
+
+/* Change button color on hover */
+.button.is-primary:hover {
+  background-color: #3367d6; /* Slightly darker blue on hover */
+}
+
+/* Add a border color for input fields */
+.input {
+  border-color: #4285f4; /* Google blue color */
+}
+
+/* Highlighted code background color */
+.code-editor {
+  background-color: #ffffff; /* White background for code editor */
+}
+
+/* Preview background color */
+.preview-wrapper {
+  background-color: #f0f0f0; /* Light gray background for live preview */
+}
+
+/* Text editor background color */
+.text-editor {
+  background-color: #ffffff; /* White background for text editor */
+}
+
+/* Text editor markdown styles */
+.text-editor .w-md-editor-bar {
+  background-color: #ececec; /* Light gray background for markdown toolbar */
+}
+
+.text-editor .w-md-editor-toolbar li button {
+  color: #666666; /* Text color for markdown toolbar buttons */
+}
+
+.text-editor .w-md-editor-content {
+  background-color: #f4f4f4; /* Light gray background for markdown content */
+}
+
+.text-editor .w-md-editor {
+  color: #333333; /* Text color for markdown content */
+}
+
+/* Cell-list background color */
+.cell-list {
+  background-color: #ffffff; /* White background for cell-list */
+}
