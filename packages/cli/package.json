@@ -2,9 +2,8 @@
   "name": "cli",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc --watch --preserveWatchOutput"
   },
   "repository": {
     "type": "git",
@@ -19,5 +18,8 @@
   "dependencies": {
     "commander": "^11.1.0",
     "local-api": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
   }
 }
