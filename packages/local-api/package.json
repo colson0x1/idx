@@ -2,8 +2,10 @@
   "name": "local-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "start": "tsc --watch --preserveWatchOutput",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/colson0x1/idx/issues"
   },
-  "homepage": "https://github.com/colson0x1/idx#readme"
+  "homepage": "https://github.com/colson0x1/idx#readme",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
 }
