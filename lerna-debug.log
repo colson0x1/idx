@@ -1,0 +1,74 @@
+0 silly argv { _: [ 'bootstrap' ], lernaVersion: '3.22.1', '$0': 'lerna' }
+1 notice cli v3.22.1
+2 verbose rootPath /Users/colson/typescriptprod/idx
+3 silly npmConfig {
+3 silly npmConfig   registry: undefined,
+3 silly npmConfig   npmClient: 'npm',
+3 silly npmConfig   npmClientArgs: [],
+3 silly npmConfig   mutex: undefined
+3 silly npmConfig }
+4 info Bootstrapping 3 packages
+5 verbose lifecycle preinstall
+6 silly lifecycle No script for "preinstall" in "local-api", continuing
+7 silly lifecycle No script for "preinstall" in "idx", continuing
+8 silly lifecycle No script for "preinstall" in "cli", continuing
+9 silly hasDependencyInstalled cli @types/node
+10 silly hasDependencyInstalled idx @types/node
+11 silly hasDependencyInstalled cli typescript
+12 silly hasDependencyInstalled local-api typescript
+13 silly hasDependencyInstalled idx typescript
+14 silly hasDependencyInstalled cli commander
+15 silly hasDependencyInstalled local-api @types/cors
+16 silly hasDependencyInstalled local-api @types/express
+17 silly hasDependencyInstalled local-api cors
+18 silly hasDependencyInstalled local-api express
+19 silly hasDependencyInstalled local-api http-proxy-middleware
+20 silly hasDependencyInstalled idx @fortawesome/fontawesome-free
+21 silly hasDependencyInstalled idx @monaco-editor/react
+22 silly hasDependencyInstalled idx @testing-library/jest-dom
+23 silly hasDependencyInstalled idx @testing-library/react
+24 silly hasDependencyInstalled idx @testing-library/user-event
+25 silly hasDependencyInstalled idx @types/jest
+26 silly hasDependencyInstalled idx @types/jscodeshift
+27 silly hasDependencyInstalled idx @types/prettier
+28 silly hasDependencyInstalled idx @types/react
+29 silly hasDependencyInstalled idx @types/react-dom
+30 silly hasDependencyInstalled idx @types/react-redux
+31 silly hasDependencyInstalled idx @types/react-resizable
+32 silly hasDependencyInstalled idx @uiw/react-md-editor
+33 silly hasDependencyInstalled idx axios
+34 silly hasDependencyInstalled idx bulmaswatch
+35 silly hasDependencyInstalled idx esbuild-wasm
+36 silly hasDependencyInstalled idx immer
+37 silly hasDependencyInstalled idx jscodeshift
+38 silly hasDependencyInstalled idx localforage
+39 silly hasDependencyInstalled idx monaco-editor
+40 silly hasDependencyInstalled idx monaco-jsx-highlighter
+41 silly hasDependencyInstalled idx prettier
+42 silly hasDependencyInstalled idx react
+43 silly hasDependencyInstalled idx react-dom
+44 silly hasDependencyInstalled idx react-redux
+45 silly hasDependencyInstalled idx react-resizable
+46 silly hasDependencyInstalled idx react-scripts
+47 silly hasDependencyInstalled idx redux
+48 silly hasDependencyInstalled idx redux-thunk
+49 silly hasDependencyInstalled idx web-vitals
+50 silly root dependencies {}
+51 silly leaf dependencies {}
+52 info Symlinking packages and binaries
+53 silly resolveSymlink /Users/colson/typescriptprod/idx/packages/cli/node_modules/local-api
+54 verbose resolveSymlink [
+54 verbose resolveSymlink   '/Users/colson/typescriptprod/idx/packages/cli/node_modules/local-api',
+54 verbose resolveSymlink   '/Users/colson/typescriptprod/idx/packages/local-api'
+54 verbose resolveSymlink ]
+55 silly createSymlink [
+55 silly createSymlink   '/Users/colson/typescriptprod/idx/packages/local-api',
+55 silly createSymlink   '/Users/colson/typescriptprod/idx/packages/cli/node_modules/local-api',
+55 silly createSymlink   'junction'
+55 silly createSymlink ]
+56 silly createSymbolicLink [
+56 silly createSymbolicLink   '../../local-api',
+56 silly createSymbolicLink   '/Users/colson/typescriptprod/idx/packages/cli/node_modules/local-api',
+56 silly createSymbolicLink   'junction'
+56 silly createSymbolicLink ]
+57 error
