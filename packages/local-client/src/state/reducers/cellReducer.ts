@@ -45,6 +45,7 @@ const reducer = produce((state: CellState = initialState, action: Action) => {
     case ActionType.FETCH_CELLS_ERROR:
       state.loading = false;
       state.error = action.payload;
+
       return state;
 
     case ActionType.UPDATE_CELL:
