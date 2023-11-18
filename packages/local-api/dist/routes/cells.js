@@ -31,7 +31,12 @@ const createCellsRouter = (filename, dir) => {
             // If read throws an error
             // Inspect the error, see if it says that the file doesn't exist
             if (err.code === 'ENOENT') {
-                // Add code to create a file and add default cells
+                // Create a file and add default cells.
+                // Content: Empty Array as a string because we're currently storing inside that file
+                // a list of cells as a JSON string.
+                // Empty array means no cells inside of it whatsoever
+                yield promises_1.default.writeFile(fullPath, '[]', 'utf-8');
+                res.send([]);
             }
             else {
                 throw err;
