@@ -14,6 +14,8 @@ interface LocalApiError {
 
 export const createCellsRouter = (filename: string, dir: string) => {
   const router = express.Router();
+  // Body parsing middleware
+  router.use(express.json());
 
   const fullPath = path.join(dir, filename);
 
