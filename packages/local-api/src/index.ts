@@ -11,6 +11,10 @@ export const serve = (
 ) => {
   const app = express();
 
+  // Whenever request comes, we're gonna first try to match it inside the router
+  app.use(createCellsRouter(filename, dir));
+  // Else we'll fall through to our proxy middleware
+
   /*
    * @ The code below is configured to work on production environment :)
    * I've written, Two different ways of serving react assets -
@@ -53,8 +57,6 @@ export const serve = (
     const packagePath = require.resolve('local-client/build/index.html');
     app.use(express.static(path.dirname(packagePath)));
   }
-
-  app.use(createCellsRouter(filename, dir));
 
   return new Promise<void>((resolve, reject) => {
     app.listen(port, resolve).on('error', reject);

@@ -10,6 +10,9 @@ const path_1 = __importDefault(require("path"));
 const cells_1 = require("./routes/cells");
 const serve = (port, filename, dir, useProxy) => {
     const app = (0, express_1.default)();
+    // Whenever request comes, we're gonna first try to match it inside the router
+    app.use((0, cells_1.createCellsRouter)(filename, dir));
+    // Else we'll fall through to our proxy middleware
     /*
      * @ The code below is configured to work on production environment :)
      * I've written, Two different ways of serving react assets -
@@ -50,7 +53,6 @@ const serve = (port, filename, dir, useProxy) => {
         const packagePath = require.resolve('local-client/build/index.html');
         app.use(express_1.default.static(path_1.default.dirname(packagePath)));
     }
-    app.use((0, cells_1.createCellsRouter)(filename, dir));
     return new Promise((resolve, reject) => {
         app.listen(port, resolve).on('error', reject);
     });
