@@ -9,20 +9,11 @@ const CellList: React.FC = () => {
   const cells = useTypedSelector(({ cell: { order, data } }) =>
     order.map((id) => data[id])
   );
-  const { fetchCells, saveCells } = useActions();
+  const { fetchCells } = useActions();
 
   useEffect(() => {
     fetchCells();
   }, []);
-
-  useEffect(() => {
-    saveCells();
-
-    // [JSON.stringify(cells)]
-    // Take list of cells, convert it into bit long string. If that string
-    // ever changes between renders of our component, that'll be a sign that
-    // we want to call our saveCells action creators
-  }, [JSON.stringify(cells)]);
 
   const renderedCells = cells.map((cell) => (
     <Fragment key={cell.id}>
