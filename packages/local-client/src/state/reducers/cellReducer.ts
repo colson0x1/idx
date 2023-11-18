@@ -21,6 +21,27 @@ const initialState: CellState = {
 
 const reducer = produce((state: CellState = initialState, action: Action) => {
   switch (action.type) {
+    case ActionType.FETCH_CELLS:
+      // Direct mutation
+      state.loading = true;
+      state.error = null;
+      // No need to return state when using Immer but to make TS happy, we have to
+      return state;
+
+    case ActionType.FETCH_CELLS_COMPLETE:
+      state.order = action.payload.map((cell) => cell.id);
+      state.data = action.payload.reduce((acc, cell) => {
+        acc[cell.id] = cell;
+        return acc;
+      }, {} as CellState['data']);
+
+      return state;
+
+    case ActionType.FETCH_CELLS_ERROR:
+      state.loading = false;
+      state.error = action.payload;
+      return state;
+
     case ActionType.UPDATE_CELL:
       const { id, content } = action.payload;
 
