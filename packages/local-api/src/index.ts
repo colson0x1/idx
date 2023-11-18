@@ -2,7 +2,12 @@ import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import path from 'path';
 
-export const serve = (port: number, filename: string, dir: string) => {
+export const serve = (
+  port: number,
+  filename: string,
+  dir: string,
+  useProxy: boolean,
+) => {
   const app = express();
 
   /*
@@ -30,20 +35,23 @@ export const serve = (port: number, filename: string, dir: string) => {
    * We only see local-client in packages with this line packagePath,
    * when we're running our code in this sort of development environment
    */
-  const packagePath = require.resolve('local-client/build/index.html');
-  app.use(express.static(path.dirname(packagePath)));
 
-  /*
-  app.use(
-    createProxyMiddleware({
-      target: 'http://localhost:3000',
-      // Enable websockets support
-      // Note: CRA by default uses websockets to tell the browser wheneven some development file is changed
-      ws: true,
-      logLevel: 'silent',
-    }),
-  );
-  */
+  if (useProxy) {
+    // @ Redirect/Proxy the request over to running React Development Server
+    app.use(
+      createProxyMiddleware({
+        target: 'http://localhost:3000',
+        // Enable websockets support
+        // Note: CRA by default uses websockets to tell the browser whenever some development file is changed
+        ws: true,
+        logLevel: 'silent',
+      }),
+    );
+  } else {
+    // @ Serve production build files directly from local-client package
+    const packagePath = require.resolve('local-client/build/index.html');
+    app.use(express.static(path.dirname(packagePath)));
+  }
 
   return new Promise<void>((resolve, reject) => {
     app.listen(port, resolve).on('error', reject);
