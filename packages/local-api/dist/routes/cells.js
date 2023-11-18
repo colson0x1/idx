@@ -20,6 +20,9 @@ const createCellsRouter = (filename, dir) => {
     const router = express_1.default.Router();
     const fullPath = path_1.default.join(dir, filename);
     router.get('/cells', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        const isLocalApiError = (err) => {
+            return typeof err.code === 'string';
+        };
         try {
             // Read the file
             const result = yield promises_1.default.readFile(fullPath, { encoding: 'utf-8' });
@@ -28,15 +31,17 @@ const createCellsRouter = (filename, dir) => {
             res.send(JSON.parse(result));
         }
         catch (err) {
-            // If read throws an error
-            // Inspect the error, see if it says that the file doesn't exist
-            if (err.code === 'ENOENT') {
-                // Create a file and add default cells.
-                // Content: Empty Array as a string because we're currently storing inside that file
-                // a list of cells as a JSON string.
-                // Empty array means no cells inside of it whatsoever
-                yield promises_1.default.writeFile(fullPath, '[]', 'utf-8');
-                res.send([]);
+            if (isLocalApiError(err)) {
+                // If read throws an error
+                // Inspect the error, see if it says that the file doesn't exist
+                if (err.code === 'ENOENT') {
+                    // Create a file and add default cells.
+                    // Content: Empty Array as a string because we're currently storing inside that file
+                    // a list of cells as a JSON string.
+                    // Empty array means no cells inside of it whatsoever
+                    yield promises_1.default.writeFile(fullPath, '[]', 'utf-8');
+                    res.send([]);
+                }
             }
             else {
                 throw err;
