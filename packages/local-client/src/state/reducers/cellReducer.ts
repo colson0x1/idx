@@ -21,6 +21,11 @@ const initialState: CellState = {
 
 const reducer = produce((state: CellState = initialState, action: Action) => {
   switch (action.type) {
+    case ActionType.SAVE_CELLS_ERROR:
+      state.error = action.payload;
+
+      return state;
+
     case ActionType.FETCH_CELLS:
       // Direct mutation
       state.loading = true;
