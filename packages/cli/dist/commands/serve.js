@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.serveCommand = void 0;
 const path_1 = __importDefault(require("path"));
 const commander_1 = require("commander");
-const local_api_1 = require("local-api");
+const local_api_1 = require("@colsidx/local-api");
 // if isProduction is true, then we're running app on the user's machine or something like that
 const isProduction = process.env.NODE_ENV === 'production';
 exports.serveCommand = new commander_1.Command()

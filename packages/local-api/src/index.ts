@@ -54,7 +54,9 @@ export const serve = (
     );
   } else {
     // @ Serve production build files directly from local-client package
-    const packagePath = require.resolve('local-client/build/index.html');
+    const packagePath = require.resolve(
+      '@colsidx/local-client/build/index.html',
+    );
     app.use(express.static(path.dirname(packagePath)));
   }
 

@@ -50,7 +50,7 @@ const serve = (port, filename, dir, useProxy) => {
     }
     else {
         // @ Serve production build files directly from local-client package
-        const packagePath = require.resolve('local-client/build/index.html');
+        const packagePath = require.resolve('@colsidx/local-client/build/index.html');
         app.use(express_1.default.static(path_1.default.dirname(packagePath)));
     }
     return new Promise((resolve, reject) => {
