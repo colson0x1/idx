@@ -1,7 +1,12 @@
 {
   "name": "@colsidx/local-client",
   "version": "0.1.0",
-  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/colson0x1/idx.git"
@@ -11,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/colson0x1/idx/issues"
   },
-  "dependencies": {
+  "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@monaco-editor/react": "3.7.5",
     "@testing-library/jest-dom": "^5.17.0",

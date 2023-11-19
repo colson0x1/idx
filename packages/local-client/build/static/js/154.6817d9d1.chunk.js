@@ -1,0 +1,2 @@
+(this["webpackJsonp@colsidx/local-client"]=this["webpackJsonp@colsidx/local-client"]||[]).push([[154],{342:function(t,c){Prism.languages.gcode={comment:/;.*|\B\(.*?\)\B/,string:{pattern:/"(?:""|[^"])*"/,greedy:!0},keyword:/\b[GM]\d+(?:\.\d+)?\b/,property:/\b[A-Z]/,checksum:{pattern:/\*\d+/,alias:"punctuation"},punctuation:/:/}}}]);
+//# sourceMappingURL=154.6817d9d1.chunk.js.map

@@ -2,6 +2,12 @@
   "name": "@colsidx/local-api",
   "version": "1.0.0",
   "description": "",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
