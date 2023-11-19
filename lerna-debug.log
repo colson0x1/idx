@@ -1,59 +1,10 @@
-0 silly argv { _: [ 'bootstrap' ], lernaVersion: '3.22.1', '$0': 'lerna' }
+0 silly argv {
+0 silly argv   _: [ 'bootstrap' ],
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': '/usr/local/bin/lerna'
+0 silly argv }
 1 notice cli v3.22.1
 2 verbose rootPath /Users/colson/typescriptprod/idx
-3 silly npmConfig {
-3 silly npmConfig   registry: undefined,
-3 silly npmConfig   npmClient: 'npm',
-3 silly npmConfig   npmClientArgs: [],
-3 silly npmConfig   mutex: undefined
-3 silly npmConfig }
-4 info Bootstrapping 3 packages
-5 verbose lifecycle preinstall
-6 silly lifecycle No script for "preinstall" in "@colsidx/local-client", continuing
-7 silly lifecycle No script for "preinstall" in "@colsidx/local-api", continuing
-8 silly lifecycle No script for "preinstall" in "colsidx", continuing
-9 silly hasDependencyInstalled colsidx @types/node
-10 silly hasDependencyInstalled @colsidx/local-client @types/node
-11 silly hasDependencyInstalled colsidx typescript
-12 silly hasDependencyInstalled @colsidx/local-api typescript
-13 silly hasDependencyInstalled @colsidx/local-client typescript
-14 silly hasDependencyInstalled colsidx commander
-15 silly hasDependencyInstalled @colsidx/local-api @types/cors
-16 silly hasDependencyInstalled @colsidx/local-api @types/express
-17 silly hasDependencyInstalled @colsidx/local-api cors
-18 silly hasDependencyInstalled @colsidx/local-api express
-19 silly hasDependencyInstalled @colsidx/local-api http-proxy-middleware
-20 silly hasDependencyInstalled @colsidx/local-client @fortawesome/fontawesome-free
-21 silly hasDependencyInstalled @colsidx/local-client @monaco-editor/react
-22 silly hasDependencyInstalled @colsidx/local-client @testing-library/jest-dom
-23 silly hasDependencyInstalled @colsidx/local-client @testing-library/react
-24 silly hasDependencyInstalled @colsidx/local-client @testing-library/user-event
-25 silly hasDependencyInstalled @colsidx/local-client @types/jest
-26 silly hasDependencyInstalled @colsidx/local-client @types/jscodeshift
-27 silly hasDependencyInstalled @colsidx/local-client @types/prettier
-28 silly hasDependencyInstalled @colsidx/local-client @types/react
-29 silly hasDependencyInstalled @colsidx/local-client @types/react-dom
-30 silly hasDependencyInstalled @colsidx/local-client @types/react-redux
-31 silly hasDependencyInstalled @colsidx/local-client @types/react-resizable
-32 silly hasDependencyInstalled @colsidx/local-client @uiw/react-md-editor
-33 silly hasDependencyInstalled @colsidx/local-client axios
-34 silly hasDependencyInstalled @colsidx/local-client bulmaswatch
-35 silly hasDependencyInstalled @colsidx/local-client esbuild-wasm
-36 silly hasDependencyInstalled @colsidx/local-client immer
-37 silly hasDependencyInstalled @colsidx/local-client jscodeshift
-38 silly hasDependencyInstalled @colsidx/local-client localforage
-39 silly hasDependencyInstalled @colsidx/local-client monaco-editor
-40 silly hasDependencyInstalled @colsidx/local-client monaco-jsx-highlighter
-41 silly hasDependencyInstalled @colsidx/local-client prettier
-42 silly hasDependencyInstalled @colsidx/local-client react
-43 silly hasDependencyInstalled @colsidx/local-client react-dom
-44 silly hasDependencyInstalled @colsidx/local-client react-redux
-45 silly hasDependencyInstalled @colsidx/local-client react-resizable
-46 silly hasDependencyInstalled @colsidx/local-client react-scripts
-47 silly hasDependencyInstalled @colsidx/local-client redux
-48 silly hasDependencyInstalled @colsidx/local-client redux-thunk
-49 silly hasDependencyInstalled @colsidx/local-client web-vitals
-50 silly root dependencies {}
-51 silly leaf dependencies {}
-52 info Symlinking packages and binaries
-53 error
+3 error JSONError: Unexpected string in JSON at position 840 while parsing '{  "name": "colsidx",  "version": "1.0' in packages/cli/package.json
+3 error     at module.exports (/usr/local/lib/node_modules/lerna/node_modules/parse-json/index.js:26:19)
+3 error     at parse (/usr/local/lib/node_modules/lerna/node_modules/load-json-file/index.js:15:9)
