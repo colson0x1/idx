@@ -1,2 +1,0 @@
-(this["webpackJsonp@colsidx/local-client"]=this["webpackJsonp@colsidx/local-client"]||[]).push([[452],{640:function(l,s){Prism.languages["t4-vb"]=Prism.languages["t4-templating"].createT4("vbnet")}}]);
-//# sourceMappingURL=452.4baa80f5.chunk.js.map
