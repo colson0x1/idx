@@ -1,10 +1,92 @@
-0 silly argv {
-0 silly argv   _: [ 'bootstrap' ],
-0 silly argv   lernaVersion: '3.22.1',
-0 silly argv   '$0': '/usr/local/bin/lerna'
-0 silly argv }
+0 silly argv { _: [ 'bootstrap' ], lernaVersion: '3.22.1', '$0': 'lerna' }
 1 notice cli v3.22.1
 2 verbose rootPath /Users/colson/typescriptprod/idx
-3 error JSONError: Unexpected string in JSON at position 840 while parsing '{  "name": "colsidx",  "version": "1.0' in packages/cli/package.json
-3 error     at module.exports (/usr/local/lib/node_modules/lerna/node_modules/parse-json/index.js:26:19)
-3 error     at parse (/usr/local/lib/node_modules/lerna/node_modules/load-json-file/index.js:15:9)
+3 silly npmConfig {
+3 silly npmConfig   registry: undefined,
+3 silly npmConfig   npmClient: 'npm',
+3 silly npmConfig   npmClientArgs: [],
+3 silly npmConfig   mutex: undefined
+3 silly npmConfig }
+4 info Bootstrapping 3 packages
+5 verbose lifecycle preinstall
+6 silly lifecycle No script for "preinstall" in "@colsidx/local-client", continuing
+7 silly lifecycle No script for "preinstall" in "@colsidx/local-api", continuing
+8 silly lifecycle No script for "preinstall" in "colsidx", continuing
+9 silly hasDependencyInstalled colsidx @types/node
+10 silly hasDependencyInstalled @colsidx/local-client @types/node
+11 silly hasDependencyInstalled colsidx commander
+12 silly hasDependencyInstalled colsidx esbuild
+13 silly hasDependencyInstalled @colsidx/local-api esbuild
+14 silly hasDependencyInstalled @colsidx/local-client esbuild
+15 silly hasDependencyInstalled colsidx typescript
+16 silly hasDependencyInstalled @colsidx/local-api typescript
+17 silly hasDependencyInstalled @colsidx/local-client typescript
+18 silly hasDependencyInstalled @colsidx/local-api @types/cors
+19 silly hasDependencyInstalled @colsidx/local-api @types/express
+20 silly hasDependencyInstalled @colsidx/local-api cors
+21 silly hasDependencyInstalled @colsidx/local-api express
+22 silly hasDependencyInstalled @colsidx/local-api http-proxy-middleware
+23 silly hasDependencyInstalled @colsidx/local-client @fortawesome/fontawesome-free
+24 silly hasDependencyInstalled @colsidx/local-client @monaco-editor/react
+25 silly hasDependencyInstalled @colsidx/local-client @testing-library/jest-dom
+26 silly hasDependencyInstalled @colsidx/local-client @testing-library/react
+27 silly hasDependencyInstalled @colsidx/local-client @testing-library/user-event
+28 silly hasDependencyInstalled @colsidx/local-client @types/jest
+29 silly hasDependencyInstalled @colsidx/local-client @types/jscodeshift
+30 silly hasDependencyInstalled @colsidx/local-client @types/prettier
+31 silly hasDependencyInstalled @colsidx/local-client @types/react
+32 silly hasDependencyInstalled @colsidx/local-client @types/react-dom
+33 silly hasDependencyInstalled @colsidx/local-client @types/react-redux
+34 silly hasDependencyInstalled @colsidx/local-client @types/react-resizable
+35 silly hasDependencyInstalled @colsidx/local-client @uiw/react-md-editor
+36 silly hasDependencyInstalled @colsidx/local-client axios
+37 silly hasDependencyInstalled @colsidx/local-client bulmaswatch
+38 silly hasDependencyInstalled @colsidx/local-client esbuild-wasm
+39 silly hasDependencyInstalled @colsidx/local-client immer
+40 silly hasDependencyInstalled @colsidx/local-client jscodeshift
+41 silly hasDependencyInstalled @colsidx/local-client localforage
+42 silly hasDependencyInstalled @colsidx/local-client monaco-editor
+43 silly hasDependencyInstalled @colsidx/local-client monaco-jsx-highlighter
+44 silly hasDependencyInstalled @colsidx/local-client prettier
+45 silly hasDependencyInstalled @colsidx/local-client react
+46 silly hasDependencyInstalled @colsidx/local-client react-dom
+47 silly hasDependencyInstalled @colsidx/local-client react-redux
+48 silly hasDependencyInstalled @colsidx/local-client react-resizable
+49 silly hasDependencyInstalled @colsidx/local-client react-scripts
+50 silly hasDependencyInstalled @colsidx/local-client redux
+51 silly hasDependencyInstalled @colsidx/local-client redux-thunk
+52 silly hasDependencyInstalled @colsidx/local-client web-vitals
+53 silly root dependencies {}
+54 silly leaf dependencies {}
+55 info Symlinking packages and binaries
+56 silly resolveSymlink /Users/colson/typescriptprod/idx/packages/cli/node_modules/@colsidx/local-api
+57 verbose resolveSymlink [
+57 verbose resolveSymlink   '/Users/colson/typescriptprod/idx/packages/cli/node_modules/@colsidx/local-api',
+57 verbose resolveSymlink   '/Users/colson/typescriptprod/idx/packages/local-api'
+57 verbose resolveSymlink ]
+58 silly createSymlink [
+58 silly createSymlink   '/Users/colson/typescriptprod/idx/packages/local-api',
+58 silly createSymlink   '/Users/colson/typescriptprod/idx/packages/cli/node_modules/@colsidx/local-api',
+58 silly createSymlink   'junction'
+58 silly createSymlink ]
+59 silly createSymbolicLink [
+59 silly createSymbolicLink   '../../../local-api',
+59 silly createSymbolicLink   '/Users/colson/typescriptprod/idx/packages/cli/node_modules/@colsidx/local-api',
+59 silly createSymbolicLink   'junction'
+59 silly createSymbolicLink ]
+60 silly resolveSymlink /Users/colson/typescriptprod/idx/packages/cli/node_modules/@colsidx/local-client
+61 verbose resolveSymlink [
+61 verbose resolveSymlink   '/Users/colson/typescriptprod/idx/packages/cli/node_modules/@colsidx/local-client',
+61 verbose resolveSymlink   '/Users/colson/typescriptprod/idx/packages/local-client'
+61 verbose resolveSymlink ]
+62 silly createSymlink [
+62 silly createSymlink   '/Users/colson/typescriptprod/idx/packages/local-client',
+62 silly createSymlink   '/Users/colson/typescriptprod/idx/packages/cli/node_modules/@colsidx/local-client',
+62 silly createSymlink   'junction'
+62 silly createSymlink ]
+63 silly createSymbolicLink [
+63 silly createSymbolicLink   '../../../local-client',
+63 silly createSymbolicLink   '/Users/colson/typescriptprod/idx/packages/cli/node_modules/@colsidx/local-client',
+63 silly createSymbolicLink   'junction'
+63 silly createSymbolicLink ]
+64 error

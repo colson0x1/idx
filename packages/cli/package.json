@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/colson0x1/idx#readme",
   "dependencies": {
-    "@colsidx/local-client": "^0.1.0"
+    "@colsidx/local-client": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
