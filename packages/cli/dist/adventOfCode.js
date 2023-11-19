@@ -1,1 +1,1 @@
-[{"content":"DOPE","type":"text","id":"59uab"},{"content":"show('COLSON');","type":"code","id":"4048j"}]
+[{"content":"","type":"text","id":"59uab"},{"content":"import React from 'react';\nimport ReactDOM from 'react-dom/client';\n\nconst App = () => {\n   return <h1>💎 COLSON</h1>;\n}\n\nconst root = ReactDOM.createRoot(document.querySelector('#root'));\nroot.render(<App />);","type":"code","id":"4048j"}]

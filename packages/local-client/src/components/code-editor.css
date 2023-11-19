@@ -16,3 +16,23 @@
 .editor-wrapper:hover .button-format {
   opacity: 1;
 }
+
+.statusline {
+  display: block;
+  padding: 8px;
+  background-color: transparent;
+  color: #d4d4d4;
+  border: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.statusline span {
+  color: #61dafb;
+}
+
+.statusline input {
+  background-color: transparent;
+  color: #d4d4d4;
+  border: none;
+}
