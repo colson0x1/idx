@@ -1,5 +1,5 @@
 {
-  "name": "local-client",
+  "name": "@colsidx/local-client",
   "version": "0.1.0",
   "private": true,
   "repository": {
