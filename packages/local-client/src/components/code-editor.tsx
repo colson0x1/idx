@@ -16,6 +16,14 @@ interface MonacoVimType {
   initVimMode(editor: any, statusline: Element | null): void;
 }
 
+declare global {
+  interface Window {
+    require: any;
+  }
+}
+
+declare const config: any;
+
 const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
   const editorRef = useRef<any>();
   const statuslineRef = useRef<HTMLDivElement | null>(null);
@@ -54,23 +62,6 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
       undefined,
       () => {}
     );
-
-    // Configure Vim
-    /*
-    window.require.config({
-      paths: {
-        'monaco-vim': 'https://unpkg.com/monaco-vim/dist/monaco-vim',
-      },
-    });
-
-    window.require(['monaco-vim'], function (MonacoVim: MonacoVimType) {
-      const statusline = document.querySelector('.statusline');
-
-      if (statusline) {
-        MonacoVim.initVimMode(monacoEditor, statusline);
-      }
-    });
-    */
   };
 
   const onFormatClick = () => {

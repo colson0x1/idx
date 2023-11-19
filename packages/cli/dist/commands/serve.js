@@ -21,7 +21,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 exports.serveCommand = new commander_1.Command()
     .command('serve [filename]')
     .description('Open a file for editing')
-    .option('-p, --port <number>', 'port to run server on', '3001')
+    .option('-p, --port <number>', 'port to run server on', '4004')
     .action((filename = 'adventOfCode.js', options) => __awaiter(void 0, void 0, void 0, function* () {
     const isLocalApiError = (err) => {
         return typeof err.code === 'string';
