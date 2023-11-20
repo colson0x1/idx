@@ -1,4 +1,6 @@
-/dist
+/dist/index.js
+/dist/commands/serve.js
+!/dist/adventOfCode.js
 
 # dependencies
 /node_modules
