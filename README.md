@@ -6,6 +6,8 @@ ColsIDX Code Editor is a powerful online Integrated Development Environment (IDE
 
 ![idx/colsidx](https://i.imgur.com/bNgxGSz.png)
 
+![idx/colsidx](https://i.imgur.com/96FBJJ8.png)
+
 ## Table of Contents
 - [iDX Code Editor/ IDE (colsidx)](#idx-code-editor-ide-colsidx)
   - [Version: 1.0.0](#version-100)
@@ -47,7 +49,23 @@ To install the ColsIDX Code Editor, use the following command:
 1. Execute with npx:
 
 ```bash
-sudo npx colsidx serve
+$ sudo npx colsidx serve
+```
+
+OR Global Installation with npm:
+
+1. Install globally on your machine.
+```bash
+$ sudo npm install -g colsidx
+```
+2. Execute iDX:
+```bash
+$ colsidx serve
+```
+
+Help command:
+```bash
+$ colsidx
 ```
 
 Visit `http://localhost:4004` in your browser to access the ColsIDX Code Editor.
@@ -95,5 +113,9 @@ This project is licensed under the [MIT License](LICENSE).
 ![idx/colsidx](https://i.imgur.com/bNgxGSz.png)
 
 ![idx/colsidx](https://i.imgur.com/3d89Wdc.png)
+
+![idx/colsidx](https://i.imgur.com/96FBJJ8.png)
+
+![idx/colsidx](https://i.imgur.com/i8vqcAq.png)
 
 ![idx/colsidx](https://i.imgur.com/T3ObaM0.png)
