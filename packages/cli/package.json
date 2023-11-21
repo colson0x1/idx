@@ -1,6 +1,6 @@
 {
   "name": "colsidx",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
-    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\" && npm run copy-files",
+    "copy-files": "rsync -u dist/idxFromScratch.js dist/idxstarter.js dist/"
   },
   "repository": {
     "type": "git",
