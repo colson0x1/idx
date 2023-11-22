@@ -1,13 +1,40 @@
 {
   "name": "colsidx",
-  "version": "1.1.12",
-  "description": "",
+  "version": "1.1.13",
+  "description": "🚀 colsidx is a cutting-edge, interactive code editor & IDE powered by React, Redux, TypeScript, and ESBuild. Elevate your coding experience with seamless support for JavaScript, JSX, npm package imports, live previews, and slick Vim integration! 🌟",
+  "keywords": [
+    "code editor",
+    "javascript",
+    "jsx",
+    "react",
+    "browser",
+    "ide",
+    "markdown",
+    "online editor",
+    "coding",
+    "web development",
+    "reactive",
+    "typescript",
+    "vim",
+    "js code editor",
+    "jsx code editor",
+    "js code preview",
+    "jsx code preview",
+    "vim code editor",
+    "interactive",
+    "npm",
+    "live preview",
+    "typescript",
+    "esbuild"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "bin": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "dist/idxFromScratch.js",
+    "dist/idxstarter.js"
   ],
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
