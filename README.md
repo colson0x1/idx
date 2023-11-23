@@ -1,6 +1,6 @@
 # iDX Code Editor/ IDE (colsidx)
-## Version: 1.0.0
-## Npm: https://www.npmjs.com/package/colsidx
+### Version: 1.1.19
+## NPM: @[colsidx](https://www.npmjs.com/package/colsidx)
 
 ColsIDX Code Editor is a powerful online Integrated Development Environment (IDE) that supports JavaScript, JSX, and imports from npm, including popular libraries like React. Built with React, Redux, TypeScript, esbuild, and WebAssembly, this IDE provides a seamless coding experience with features like live preview and Markdown editing.
 
@@ -10,8 +10,8 @@ ColsIDX Code Editor is a powerful online Integrated Development Environment (IDE
 
 ## Table of Contents
 - [iDX Code Editor/ IDE (colsidx)](#idx-code-editor-ide-colsidx)
-  - [Version: 1.0.0](#version-100)
-  - [Npm: https://www.npmjs.com/package/colsidx](#npm-httpswwwnpmjscompackagecolsidx)
+    - [Version: 1.1.19](#version-1119)
+  - [NPM: @colsidx](#npm-colsidx)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Architecture](#architecture)
@@ -54,10 +54,14 @@ $ sudo npm install -g colsidx
 ```bash
 $ colsidx serve
 ```
-
 Help command:
 ```bash
 $ colsidx
+```
+
+**Explore the power of iDX** 🔥
+```bash
+$ colsidx serve idxstarter.js
 ```
 
 Visit `http://localhost:4004` in your browser to access the ColsIDX Code Editor.

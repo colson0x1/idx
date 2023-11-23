@@ -20,19 +20,24 @@ const local_api_1 = require("@colsidx/local-api");
 const isProduction = process.env.NODE_ENV === 'production';
 exports.serveCommand = new commander_1.Command()
     .command('serve [filename]')
-    .description('Open a file for editing. \n    Try `npx colsidx serve idxstarter.js`')
+    .description('Open a file for editing. \n    Try `colsidx serve idxstarter.js`')
     .option('-p, --port <number>', 'port to run server on', '4004')
-    .action((filename = 'idxFromScratch.js', options) => __awaiter(void 0, void 0, void 0, function* () {
+    .action((filename = 'idxAPI.js', options) => __awaiter(void 0, void 0, void 0, function* () {
     const isLocalApiError = (err) => {
         return typeof err.code === 'string';
     };
     try {
+        const globalColsidxDir = path_1.default.resolve(__dirname, '..');
+        const defaultFile = ['idxstarter.js'];
+        const isDefaultFile = defaultFile.includes(filename);
         /*
         process.cwd() - returns directory (absolute path) the user ran that command from,
         path.dirname()  - returns folder name of the relative path provided,
         basename() - returns just the filename
       */
-        const dir = path_1.default.join(process.cwd(), path_1.default.dirname(filename));
+        const dir = isDefaultFile
+            ? path_1.default.join(globalColsidxDir, 'dist')
+            : path_1.default.join(process.cwd(), path_1.default.dirname(filename));
         yield (0, local_api_1.serve)(parseInt(options.port), path_1.default.basename(filename), dir, !isProduction);
         console.log(`Opened ${filename}. Navigate to http://localhost:${options.port} to edit the file.`);
     }

@@ -33,6 +33,10 @@ Fire up the interactive code editor:
 ```bash
 colsidx serve
 ```
+**Explore the power of iDX** 🔥
+```bash
+$ colsidx serve idxstarter.js
+```
 
 Open a specific file and conquer:
 
