@@ -51,6 +51,12 @@ Here's the power at your fingertips:
 ```bash
 colsidx serve idxstarter.js -p 4009
 ```
+```bash
+colsidx serve authentication.js -p 4008
+```
+```bash
+colsidx serve api.js -p 4006
+```
 
 ## 🌐 Dive Deeper
 

@@ -46,14 +46,6 @@ For a detailed breakdown of the project structure and how these components inter
 
 To install the ColsIDX Code Editor, use the following command:
 
-1. Execute with npx:
-
-```bash
-$ sudo npx colsidx serve
-```
-
-OR Global Installation with npm:
-
 1. Install globally on your machine.
 ```bash
 $ sudo npm install -g colsidx
@@ -69,6 +61,8 @@ $ colsidx
 ```
 
 Visit `http://localhost:4004` in your browser to access the ColsIDX Code Editor.
+
+More on commands: [NPM colsidx](https://www.npmjs.com/package/colsidx)
 
 ## Usage
 

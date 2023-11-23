@@ -1,6 +1,6 @@
 {
   "name": "colsidx",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "🚀 colsidx is a cutting-edge, interactive code editor & IDE powered by React, Redux, TypeScript, and ESBuild. Elevate your coding experience with seamless support for JavaScript, JSX, npm package imports, live previews, and slick Vim integration! 🌟",
   "keywords": [
     "code editor",
@@ -32,14 +32,11 @@
   },
   "bin": "dist/index.js",
   "files": [
-    "dist",
-    "dist/idxFromScratch.js",
-    "dist/idxstarter.js"
+    "dist"
   ],
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
-    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\" && npm run copy-files",
-    "copy-files": "rsync -u dist/idxFromScratch.js dist/idxstarter.js dist/"
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
   },
   "repository": {
     "type": "git",
