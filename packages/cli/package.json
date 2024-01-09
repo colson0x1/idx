@@ -1,8 +1,9 @@
 {
   "name": "colsidx",
-  "version": "1.1.19",
+  "version": "1.1.22",
   "description": "🚀 colsidx is a cutting-edge, interactive code editor & IDE powered by React, Redux, TypeScript, and ESBuild. Elevate your coding experience with seamless support for JavaScript, JSX, npm package imports, live previews, and slick Vim integration! 🌟",
   "keywords": [
+    "colsidx",
     "code editor",
     "javascript",
     "jsx",

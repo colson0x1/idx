@@ -1,9 +1,20 @@
-```markdown
 # 🚀 colsidx
 
 **Unleash Your Coding Genius with colsidx, the Mind-Blowing Code Editor & IDE!**
 
-![colsidx Demo](https://i.imgur.com/bNgxGSz.png)
+```zsh
+$ npx colsidx serve
+```
+
+![colsidx execute cli](https://i.imgur.com/VuXtrBq.png)
+
+![colsidx npm](https://i.imgur.com/AYTNTtG.png)
+
+![colsidx](https://i.imgur.com/Fye6saQ.png)
+
+![colsidx](https://i.imgur.com/ap6bzGL.png)
+
+![colsidx](https://i.imgur.com/ZTh6Z1W.png)
 
 ## 🔥 Powered by React, Redux, TypeScript, and ESBuild
 
@@ -18,11 +29,27 @@ Embark on an epic coding journey with colsidx, where the magic happens thanks to
 
 ## 🚀 Getting Started
 
+### Execution
+
+Fire iDX with:
+
+```zsh
+npx colsidx serve <file-name>.js
+```
+
+NOTE: iDX creates specified file in the current working directory.
+
+Open in a specific port:
+
+```zsh
+npx colsidx serve <file-name>.js -p <port>
+```
+
 ### Installation
 
 Go global with colsidx in seconds:
 
-```bash
+```zsh
 npm install -g colsidx
 ```
 
@@ -30,35 +57,39 @@ npm install -g colsidx
 
 Fire up the interactive code editor:
 
-```bash
+```zsh
 colsidx serve
 ```
+
 **Explore the power of iDX** 🔥
-```bash
+
+```zsh
 $ colsidx serve idxstarter.js
 ```
 
 Open a specific file and conquer:
 
-```bash
+```zsh
 colsidx serve your-file.js
 ```
 
 Customize your coding realm with a specific port:
 
-```bash
+```zsh
 colsidx serve -p 4001
 ```
 
 Here's the power at your fingertips:
 
-```bash
+```zsh
 colsidx serve idxstarter.js -p 4009
 ```
-```bash
+
+```zsh
 colsidx serve authentication.js -p 4008
 ```
-```bash
+
+```zsh
 colsidx serve api.js -p 4006
 ```
 
@@ -67,4 +98,3 @@ colsidx serve api.js -p 4006
 For the complete magical manual, visit [GitHub - colson0x1/idx](https://github.com/colson0x1/idx) and unlock the secrets of colsidx.
 
 **Brace Yourself for a Coding Odyssey! 🚀**
-```

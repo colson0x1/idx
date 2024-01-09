@@ -1,16 +1,25 @@
 # iDX Code Editor/ IDE (colsidx)
-### Version: 1.1.19
+
+### Version: 1.1.22
+
 ## NPM: @[colsidx](https://www.npmjs.com/package/colsidx)
 
 ColsIDX Code Editor is a powerful online Integrated Development Environment (IDE) that supports JavaScript, JSX, and imports from npm, including popular libraries like React. Built with React, Redux, TypeScript, esbuild, and WebAssembly, this IDE provides a seamless coding experience with features like live preview and Markdown editing.
 
-![idx/colsidx](https://i.imgur.com/bNgxGSz.png)
+![idx/colsidx](https://i.imgur.com/VuXtrBq.png)
 
-![idx/colsidx](https://i.imgur.com/96FBJJ8.png)
+![idx/colsidx](https://i.imgur.com/AYTNTtG.png)
+
+![idx/colsidx](https://i.imgur.com/Fye6saQ.png)
+
+![idx/colsidx](https://i.imgur.com/ap6bzGL.png)
+
+![idx/colsidx](https://i.imgur.com/ZTh6Z1W.png)
 
 ## Table of Contents
+
 - [iDX Code Editor/ IDE (colsidx)](#idx-code-editor-ide-colsidx)
-    - [Version: 1.1.19](#version-1119)
+  - [Version: 1.1.21](#version-1121)
   - [NPM: @colsidx](#npm-colsidx)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
@@ -44,23 +53,26 @@ For a detailed breakdown of the project structure and how these components inter
 
 ### Installation
 
-To install the ColsIDX Code Editor, use the following command:
+To execute ColsIDX Code Editor, use the following command:
 
-1. Install globally on your machine.
-```bash
-$ sudo npm install -g colsidx
+1. Execute iDX:
+
+```zsh
+$ npx colsidx serve <file-name>.js
 ```
-2. Execute iDX:
-```bash
-$ colsidx serve
-```
+
+iDX creates the file in the current working directory. The data then will keep persisting unless we stop the server!
+
 Help command:
-```bash
-$ colsidx
+
+```zsh
+$ npx colsidx -h
 ```
 
 **Explore the power of iDX** 🔥
-```bash
+
+```zsh
+$ npm i -g colsidx
 $ colsidx serve idxstarter.js
 ```
 
@@ -101,6 +113,8 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ## Screenshots
+
+![idx/colsidx](https://i.imgur.com/SuD1WQt.png)
 
 ![idx/colsidx](https://i.imgur.com/1VeRrAd.png)
 
